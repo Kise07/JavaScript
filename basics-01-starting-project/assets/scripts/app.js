@@ -4,8 +4,8 @@ let currentResult = defaultResult;
 currentResult = currentResult + 10 * 3 / 2 - 1;
 // Template literal
 let calculationDescription = `(${defaultResult} + 10) * 3 / 2 - 1`;
-let errorMessage = "An error \n '" +
+let errorMessage = "An error \\" +
                     "occured!";
-                    // Quote in Double quotes
+                    // Backslash for escape in Double quotes
 // Normal String with whitespace
 outputResult(currentResult, errorMessage);
