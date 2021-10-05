@@ -8,4 +8,4 @@ let errorMessage = "An error \\" +
                     "occured!";
                     // Backslash for escape in Double quotes
 // Normal String with whitespace
-outputResult(currentResult, errorMessage);
+outputResult(currentResult, calculationDescription);
