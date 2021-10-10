@@ -3,8 +3,9 @@ let currentResult = defaultResult;
 
 // Splitting Codes into Functions 
 function add() {
-    const calcDescription = `${currentResult} + ${userInput.value}`;
-    currentResult = currentResult + parseInt(userInput.value);
+    const enteredNumber = parseInt(usrInput.value)
+    const calcDescription = `${currentResult} + ${enteredNumber.value}`;
+    currentResult = currentResult + enteredNumber.value;
     outputResult(currentResult, calcDescription);
 }
 
