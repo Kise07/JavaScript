@@ -1,15 +1,16 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
 
+// This is a comment: (//) & (/* */)
+// Gets inputs from input field
 function getUserNumberInput() {
   return parseInt(usrInput.value);
 }
 
-// Connected All Buttons to functions
-// Code Re-factoring & Code Re-usages
+// Generates and writes calculation log
 function createAndWriteOutput(operator, resultBeforeCalc, CalcNumber) {
   const calcDescription = `${resultBeforeCalc} ${operator} ${CalcNumber}`;
-  outputResult(currentResult, calcDescription);
+  outputResult(currentResult, calcDescription); // from vender file
 }
 
 function add() {
