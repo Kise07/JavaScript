@@ -25,6 +25,7 @@ function add() {
     result: currentResult,
   };
   logEntries.push(logEntry); // Call & Pushing
+  console.log(logEntry.operaton); // Accesing Object data
   console.log(logEntries); // Logging Pushed with Index
 }
 
