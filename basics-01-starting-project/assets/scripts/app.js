@@ -29,21 +29,27 @@ function writeToLog( // Adding a Re-usable Function that uses Object
   console.log(logEntries);
 }
 
-// Shorthand Operators
-function add() {
+function calculatonResult(calculationType) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult += enteredNumber; // Shorthand
-  createAndWriteOutput('+', initialResult, enteredNumber);
-  writeToLog('ADD', initialResult, enteredNumber, currentResult); // Calling function
+  if (calculationType === 'ADD') {
+    currentResult += enteredNumber; // Shorthand
+    mathOperation = '+';
+  } else {
+    currentResult -= enteredNumber; // Shorthand
+    mathOperation = '-';
+  }
+  createAndWriteOutput(mathOperation, initialResult, enteredNumber);
+  writeToLog(calculationType, initialResult, enteredNumber, currentResult); // Calling function
+}
+
+// Shorthand Operators
+function add() {
+  calculatonResult('ADD');
 }
 
 function subtract() {
-  const enteredNumber = getUserNumberInput();
-  const initialResult = currentResult;
-  currentResult -= enteredNumber; // Shorthand
-  createAndWriteOutput('-', initialResult, enteredNumber);
-  writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult); // Calling function
+  calculatonResult('SUBTRACT');
 }
 
 function multiply() {
