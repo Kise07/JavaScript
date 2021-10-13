@@ -37,7 +37,7 @@ function calculatonResult(calculationType) {
       calculationType !== 'SUBTRACT' &&
       calculationType !== 'MULTIPLY' &&
       calculationType !== 'DIVIDE') ||
-    !enteredNumber
+    !enteredNumber // Coercing to convert Boolean (true/false)
   ) {
     return;
   }
