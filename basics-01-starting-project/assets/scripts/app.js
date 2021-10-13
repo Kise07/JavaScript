@@ -30,11 +30,14 @@ function writeToLog( // Adding a Re-usable Function that uses Object
 }
 
 function calculatonResult(calculationType) {
-  if ( // LOGICAL AND OPERATOR
-    calculationType !== 'ADD' &&
-    calculationType !== 'SUBTRACT' &&
-    calculationType !== 'MULTIPLY' &&
-    calculationType !== 'DIVIDE'
+  const enteredNumber = getUserNumberInput();
+  if (
+    // LOGICAL AND OPERATOR
+    (calculationType !== 'ADD' &&
+      calculationType !== 'SUBTRACT' &&
+      calculationType !== 'MULTIPLY' &&
+      calculationType !== 'DIVIDE') ||
+    !enteredNumber
   ) {
     return;
   }
@@ -46,7 +49,6 @@ function calculatonResult(calculationType) {
   //   calculationType === 'MULTIPLY' ||
   //   calculationType === 'DIVIDE'
   // ) {
-  const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   if (calculationType === 'ADD') {
     currentResult += enteredNumber; // Shorthand
