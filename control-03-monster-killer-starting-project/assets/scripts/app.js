@@ -10,12 +10,20 @@ let hasBonusLife = true;
 
 adjustHealthBars(ChosenMaxLife);
 
+function reset() {
+  // Reset the Initalized Lifes
+  currentMonsterHealth = ChosenMaxLife;
+  currentPlayerHealth = ChosenMaxLife;
+  resetGame(ChosenMaxLife);
+}
+
 function endRound() {
   const initialPlayerHealth = currentPlayerHealth;
   const playerDamage = dealPlayerDamage(MONSTER_ATTACK_VALUE);
   currentPlayerHealth -= playerDamage;
 
-  if (currentPlayerHealth <= 0 && hasBonusLife) { //Using Truthy
+  if (currentPlayerHealth <= 0 && hasBonusLife) {
+    //Using Truthy
     hasBonusLife = false;
     removeBonusLife();
     currentPlayerHealth = initialPlayerHealth;
@@ -29,6 +37,10 @@ function endRound() {
     alert('You lost!');
   } else if (currentPlayerHealth <= 0 && currentMonsterHealth <= 0) {
     alert('You have a draw!');
+  }
+
+  if (currentMonsterHealth <= 0 || currentPlayerHealth <= 0) {
+    reset();
   }
 }
 
@@ -52,7 +64,8 @@ function strongAttackHandler() {
   attackMonster('STRONG_ATTACK');
 }
 
-function healPlayerHandler() { // healbtn
+function healPlayerHandler() {
+  // healbtn
   let healValue;
   if (currentPlayerHealth >= ChosenMaxLife - HEAL_VALUE) {
     alert("You can't heal more than your max initial health.");
