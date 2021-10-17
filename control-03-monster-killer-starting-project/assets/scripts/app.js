@@ -226,13 +226,24 @@ function healPlayerHandler() {
 
 function printLogHandler() {
   for (let i = 0; i < 3; i++) {
+    // #1 for Loop
     console.log('-----------');
   }
-  // for (let i = 10; i > 0; ) {
+  // for (let i = 10; i > 0; ) {   // #2 for Loop
   //   i--;
   //   console.log(i);
   // }
-  console.log(battleLog);
+  // for (let i = 0; i < battleLog.length; i++) {  // #3 for Loop (Array elements iteration)
+  //   console.log(battleLog[i]);
+  // }
+  let i = 0; // Optional Indexing
+  for (const logEntry of battleLog) {
+    // for-of Loop
+    console.log(logEntry);
+    console.log(i); // (for loop) [for indexing] after (for-of) loop
+    i++;
+  }
+  // console.log(battleLog); // Simple Console log
 }
 
 attackBtn.addEventListener('click', attackHandler);
