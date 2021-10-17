@@ -239,8 +239,12 @@ function printLogHandler() {
   let i = 0; // Optional Indexing
   for (const logEntry of battleLog) {
     // for-of Loop
-    console.log(logEntry);
-    console.log(i); // (for loop) [for indexing] after (for-of) loop
+    // console.log(logEntry);
+    // console.log(i); // (for loop) [for indexing] after (for-of) loop
+    console.log(`#${i}`);
+    for (const key in logEntry) {  // (for-in) Loop
+      console.log(`${key} => ${logEntry[key]}`); 
+    }
     i++;
   }
   // console.log(battleLog); // Simple Console log
