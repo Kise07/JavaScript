@@ -225,9 +225,14 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
-  for (let i = 0; i < 3; i++) {
-    // #1 for Loop
-    console.log('-----------');
+  // for (let i = 0; i < 3; i++) {
+  //   // #1 for Loop
+  //   console.log('-----------');
+  // }
+  let j = 0; // #1 While Loop
+  while (j < 3) {
+    console.log('--------');
+    j++;
   }
   // for (let i = 10; i > 0; ) {   // #2 for Loop
   //   i--;
@@ -242,8 +247,9 @@ function printLogHandler() {
     // console.log(logEntry);
     // console.log(i); // (for loop) [for indexing] after (for-of) loop
     console.log(`#${i}`);
-    for (const key in logEntry) {  // (for-in) Loop
-      console.log(`${key} => ${logEntry[key]}`); 
+    for (const key in logEntry) {
+      // (for-in) Loop
+      console.log(`${key} => ${logEntry[key]}`);
     }
     i++;
   }
