@@ -225,13 +225,13 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
-  // for (let i = 0; i < 3; i++) {
-  //   // #1 for Loop
-  //   console.log('-----------');
-  // }
-  let j = 0; // #1 While Loop
+  for (let i = 0; i < 3; i++) {
+    // #1 for Loop
+    console.log('-----------');
+  }
+  let j = 0; // #Do-While Loop
   while (j < 3) {
-    console.log('--------');
+    console.log(j);
     j++;
   }
   // for (let i = 10; i > 0; ) {   // #2 for Loop
