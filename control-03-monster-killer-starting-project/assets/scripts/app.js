@@ -229,11 +229,11 @@ function printLogHandler() {
     // #1 for Loop
     console.log('-----------');
   }
-  let j = 0; // #Do-While Loop
-  while (j < 3) {
+  let j = 3; // #Do-While Loop
+  do {
     console.log(j);
     j++;
-  }
+  } while (j < 3);
   // for (let i = 10; i > 0; ) {   // #2 for Loop
   //   i--;
   //   console.log(i);
