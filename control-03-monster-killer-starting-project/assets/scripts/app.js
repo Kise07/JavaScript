@@ -227,21 +227,13 @@ function healPlayerHandler() {
 
 function printLogHandler() {
   for (let i = 0; i < 3; i++) {
-    // #1 for Loop
     console.log('-----------');
   }
-  let j = 3; // #Do-While Loop
+  let j = 3; // Label Loop eg: OuterWhile (works to break or continue a loop from anywhere!)
   do {
     console.log(j);
     j++;
   } while (j < 3);
-  // for (let i = 10; i > 0; ) {   // #2 for Loop
-  //   i--;
-  //   console.log(i);
-  // }
-  // for (let i = 0; i < battleLog.length; i++) {  // #3 for Loop (Array elements iteration)
-  //   console.log(battleLog[i]);
-  // }
   let i = 0;
   for (const logEntry of battleLog) {
     if ((!lastLoggedEntry && lastLoggedEntry !== 0) || lastLoggedEntry < i) {
@@ -254,7 +246,6 @@ function printLogHandler() {
     }
     i++;
   }
-  // console.log(battleLog); // Simple Console log
 }
 
 attackBtn.addEventListener('click', attackHandler);
