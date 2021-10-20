@@ -12,15 +12,20 @@ const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
 const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 
-const enteredValue = prompt('Maximum life of you and the monster.', '100');
-
-let ChosenMaxLife = parseInt(enteredValue);
 let battleLog = [];
 let lastLoggedEntry;
 
-if (isNaN(ChosenMaxLife) || ChosenMaxLife <= 0) {
-  ChosenMaxLife = 100;
+function getMaxLifeValue() {
+  const enteredValue = prompt('Maximum life of you and the monster.', '100');
+
+  const parseValue = parseInt(enteredValue);
+  if (isNaN(parseValue) || parseValue <= 0) {
+    throw { message: 'Invalid user input, not a number!' };
+  }
+  return parseValue;
 }
+
+let ChosenMaxLife = getMaxLifeValue();
 
 let currentMonsterHealth = ChosenMaxLife;
 let currentPlayerHealth = ChosenMaxLife;
