@@ -17,7 +17,8 @@
 // console.log(name, hobbies);
 
 // greet();
+'use strict'; // Strict-mode
+
+let userName = 'Max';
 
 console.log(userName);
-
-var userName = 'Max'; // Hoisting
