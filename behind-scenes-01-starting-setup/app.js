@@ -17,8 +17,20 @@
 // console.log(name, hobbies);
 
 // greet();
-'use strict'; // Strict-mode
+// 'use strict'; // Strict-mode
 
-let userName = 'Max';
+// let userName = 'Max';
 
-console.log(userName);
+// console.log(userName);
+
+// Inside the JavaScript Engine - How the Code Executes
+function getName() {
+  return prompt('Your name: ', '');
+}
+
+function greet() {
+  const userName = getName();
+  console.log('Hello ' + userName);
+}
+
+greet();
