@@ -1,8 +1,10 @@
 const startGameBtn = document.getElementById('start-game-btn');
 
-function startGame() {
+// Function Expression
+const start = function () {
+  // Anonymous function
   console.log('Game is starting...');
-}
+};
 
 // Method (Object + function)
 // const person = {
@@ -13,7 +15,7 @@ function startGame() {
 
 // person.greet();
 
-console.dir(startGame); // type of fuction
+// console.dir(startGame); // type of fuction
 
 // startGame(); // Direct Execution
-startGameBtn.addEventListener('click', startGame); // Indirect Execution w Button
+startGameBtn.addEventListener('click', start); // Indirect Execution w Button
