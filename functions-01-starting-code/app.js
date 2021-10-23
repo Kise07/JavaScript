@@ -13,5 +13,7 @@ function startGame() {
 
 // person.greet();
 
+console.dir(startGame); // type of fuction
+
 // startGame(); // Direct Execution
 startGameBtn.addEventListener('click', startGame); // Indirect Execution w Button
