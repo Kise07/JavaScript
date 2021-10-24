@@ -88,3 +88,29 @@ startGameBtn.addEventListener('click', () => {
   alert(message);
   gameIsRunning = false;
 });
+
+// not related to game
+
+const sumUp = (a, b, ...numbers) => {
+  // {... (Rest Operator)}
+  let sum = 0;
+  for (const num of numbers) {
+    sum += num;
+  }
+  return sum;
+};
+
+// Use this--
+// const subtracUp = function (...numbers) {
+const subtracUp = function () {
+  let sum = 0;
+  for (const num of arguments) {
+    // Don't use this
+    sum -= num;
+  }
+  return sum;
+};
+
+console.log(sumUp(1, 5, 10, -3, 6, 10));
+console.log(sumUp(1, 5, 10, -3, 6, 10, 25, 88));
+console.log(subtracUp(1, 10, 15, 20));
