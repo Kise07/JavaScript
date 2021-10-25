@@ -91,7 +91,7 @@ startGameBtn.addEventListener('click', () => {
 
 // not related to game
 
-const sumUp = (a, b, ...numbers) => {
+const sumUp = (resultHandler, ...numbers) => {
   // {... (Rest Operator)}
   const validateNumber = (number) => {
     // Function inside function
@@ -102,7 +102,7 @@ const sumUp = (a, b, ...numbers) => {
   for (const num of numbers) {
     sum += num;
   }
-  return sum;
+  resultHandler(sum);
 };
 
 // Use this--
@@ -116,6 +116,10 @@ const subtracUp = function () {
   return sum;
 };
 
-console.log(sumUp(1, 5, 10, -3, 6, 10));
-console.log(sumUp(1, 5, 10, -3, 6, 10, 25, 88));
+const showResult = (result) => {
+  alert('The result after adding all number is: ' + result); // callback f
+};
+
+sumUp(showResult, 1, 5, 10, -3, 6, 10);
+sumUp(showResult, 1, 5, 10, -3, 6, 10, 25, 88);
 console.log(subtracUp(1, 10, 15, 20));
