@@ -91,7 +91,7 @@ startGameBtn.addEventListener('click', () => {
 
 // not related to game
 
-const sumUp = (resultHandler, ...numbers) => {
+const combine = (resultHandler, operation, ...numbers) => {
   // {... (Rest Operator)}
   const validateNumber = (number) => {
     // Function inside function
@@ -100,26 +100,57 @@ const sumUp = (resultHandler, ...numbers) => {
 
   let sum = 0;
   for (const num of numbers) {
-    sum += num;
+    if (operation === 'ADD') {
+      sum += validateNumber(num);
+    } else {
+      sum -= validateNumber(num);
+    }
   }
   resultHandler(sum);
 };
 
 // Use this--
 // const subtracUp = function (...numbers) {
-const subtracUp = function () {
-  let sum = 0;
-  for (const num of arguments) {
-    // Don't use this
-    sum -= num;
-  }
-  return sum;
+// const subtracUp = function (resultHandler, ...numbers) {
+//   let sum = 0;
+//   for (const num of numbers) {
+//     // Don't use this
+//     sum -= num;
+//   }
+//   resultHandler(sum);
+// };
+
+const showResult = (messageText, result) => {
+  alert(messageText + ' ' + result);
 };
 
-const showResult = (result) => {
-  alert('The result after adding all number is: ' + result); // callback f
-};
-
-sumUp(showResult, 1, 5, 10, -3, 6, 10);
-sumUp(showResult, 1, 5, 10, -3, 6, 10, 25, 88);
-console.log(subtracUp(1, 10, 15, 20));
+combine(
+  showResult.bind(this, 'The result after adding all number is:'),
+  'ADD',
+  1,
+  5,
+  10,
+  -3,
+  6,
+  10
+);
+combine(
+  showResult.bind(this, 'The result after adding all number is:'),
+  'ADD',
+  1,
+  5,
+  10,
+  -3,
+  6,
+  10,
+  25,
+  88
+);
+combine(
+  showResult.bind(this, 'The result after subtracting all number is:'),
+  'SUBTRACT',
+  1,
+  10,
+  15,
+  20
+);
