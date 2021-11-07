@@ -62,7 +62,7 @@
 // console.log(hobbies);
 
 // slice Method()--
-const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+const testResults = [1, 5.3, 1.5, 10.99, 1.5, -5, 10];
 // const storedResults = testResults.slice(0, 2); // Start & End
 // const storedResults = testResults.slice(-3, -1); // -N S & -N E
 // const storedResults = testResults.slice(2); // Start to End
@@ -71,3 +71,8 @@ const storedResults = testResults.concat([3.99, 2]); // array combine within exi
 testResults.push(5.91);
 
 console.log(storedResults, testResults);
+console.log(testResults.indexOf(1.5)); // From front
+// console.log(testResults.lastIndexOf(1.5)); // From last
+
+const personalData = [{ name: 'Max' }, { name: 'Manuel' }]; // Can't work Objects
+console.log(personalData.indexOf({ name: 'Manuel' }));
