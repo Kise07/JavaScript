@@ -37,10 +37,26 @@
 const hobbies = ['Sports', 'Cooking']; // An Array
 hobbies.push('Reading'); // Adding a Element from behind
 hobbies.unshift('Coding'); // Adding a Element from front
-const poppedValue = hobbies.pop(); // Removing a Element
+const poppedValue = hobbies.pop(); // Removing a Element & Storing The Value
 hobbies.shift(); // Removing a Element from front
 console.log(hobbies);
 
 hobbies[1] = 'Coding'; // Shorthand for Add or Replace
-hobbies[5] = 'Reading'; // rarely used
+// hobbies[5] = 'Reading'; // rarely used
 console.log(hobbies, hobbies[4]);
+
+// Splice Method()--
+// hobbies.splice(0, 0, 'Good Food'); // Adding a Element Within
+// console.log(hobbies);
+
+hobbies.splice(1, 0, 'Good Food'); // Adding a Element Within index[1]
+console.log(hobbies);
+
+// hobbies.splice(0, 1, 'Good Food'); // Removing a Element Within index[1]
+// console.log(hobbies);
+
+// hobbies.splice(0); // Removing whole array
+// console.log(hobbies);
+
+const removeElements = hobbies.splice(-1, 1); // Storing Removed Element
+console.log(hobbies);
