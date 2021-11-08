@@ -17,7 +17,7 @@
 
 // // // #2 Data in Array
 // // const hobbies = ['Cooking', 'Sports']; // Simple Array
-// // const personalData = [30, 'Max', { moreDetails: [] }]; // Mixed Types
+// // const personData = [30, 'Max', { moreDetails: [] }]; // Mixed Types
 
 // // const analyticsData = [
 // //   [1, 1.6],
@@ -31,7 +31,7 @@
 // //   }
 // // }
 
-// // console.log(personalData[1]); // Indexing personalData
+// // console.log(personData[1]); // Indexing personData
 
 // // Adding & Removing Elements--
 // const hobbies = ['Sports', 'Cooking']; // An Array
@@ -74,5 +74,22 @@ console.log(storedResults, testResults);
 console.log(testResults.indexOf(1.5)); // From front
 // console.log(testResults.lastIndexOf(1.5)); // From last
 
-const personalData = [{ name: 'Max' }, { name: 'Manuel' }]; // Can't work Objects
-console.log(personalData.indexOf({ name: 'Manuel' }));
+const personData = [{ name: 'Max' }, { name: 'Manuel' }]; // Can't work Objects
+console.log(personData.indexOf({ name: 'Manuel' }));
+
+// find() and findIndex()--
+const manuel = personData.find((person, idx, persons) => {
+  // find
+  return person.name === 'Manuel';
+});
+
+manuel.name = 'Anna';
+
+console.log(manuel, personData);
+
+const maxIndex = personData.findIndex((person, idx, persons) => {
+  // findIndex
+  return person.name === 'Max';
+});
+
+console.log(maxIndex);
