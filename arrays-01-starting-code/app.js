@@ -98,19 +98,31 @@
 // console.log(maxIndex);
 
 // Alternative for() method--
+// const prices = [10.99, 5.99, 3.99, 6.59];
+// const tax = 0.19;
+// const taxAdjustedPrices = [];
+
+// // Simple for() loop--
+// // for (const price of prices) {
+// //   taxAdjustedPrices.push(price * (1 + tax));
+// // }
+
+// // forEach() method--
+// prices.forEach((price, idx, prices) => {
+//   const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+//   taxAdjustedPrices.push(priceObj);
+// });
+
+// console.log(taxAdjustedPrices);
+
+// Map()--
 const prices = [10.99, 5.99, 3.99, 6.59];
 const tax = 0.19;
-const taxAdjustedPrices = [];
 
-// Simple for() loop--
-// for (const price of prices) {
-//   taxAdjustedPrices.push(price * (1 + tax));
-// }
-
-// forEach() method--
-prices.forEach((price, idx, prices) => {
+// map() method--
+const taxAdjustedPrices = prices.map((price, idx, prices) => {
   const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
-  taxAdjustedPrices.push(priceObj);
+  return priceObj;
 });
 
-console.log(taxAdjustedPrices);
+console.log(prices, taxAdjustedPrices);
