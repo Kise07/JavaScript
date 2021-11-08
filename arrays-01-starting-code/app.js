@@ -74,6 +74,9 @@ console.log(storedResults, testResults);
 console.log(testResults.indexOf(1.5)); // From front
 // console.log(testResults.lastIndexOf(1.5)); // From last
 
+console.log(testResults.includes(10.99)); // include method--
+console.log(testResults.indexOf(10.99) !== -1); // (Same as include method)
+
 const personData = [{ name: 'Max' }, { name: 'Manuel' }]; // Can't work Objects
 console.log(personData.indexOf({ name: 'Manuel' }));
 
