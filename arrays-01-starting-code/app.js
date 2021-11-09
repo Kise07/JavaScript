@@ -155,3 +155,16 @@ console.log(sortedPrices); // or .reverse()
 const filteredArray = prices.filter((p) => p > 6); // Arrow function() SH
 
 console.log(filteredArray);
+
+// reduce() method--
+// let sum = 0; // Simple forEach() method
+
+// prices.forEach((price) => {
+//   sum += price;
+// });
+
+// console.log(sum);
+
+const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0); // Reduce SH
+
+console.log(sum);
