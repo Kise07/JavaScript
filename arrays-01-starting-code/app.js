@@ -168,3 +168,20 @@ console.log(filteredArray);
 const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0); // Reduce SH
 
 console.log(sum);
+
+// Chaining Methods in JavaScript--
+// const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
+// const transformedArray = originalArray.map((obj) => obj.price); // produces [10.99, 5.99, 29.99]
+// const sum1 = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
+
+// #1 Alternative--
+// const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
+// const sum1 = originalArray.reduce((sumVal, curVal) => sumVal + curVal.price, 0); // => 46.97
+
+// #2 Alternative--
+const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
+const sum1 = originalArray
+  .map((obj) => obj.price)
+  .reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
+
+console.log(sum1);
