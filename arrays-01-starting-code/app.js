@@ -185,3 +185,16 @@ const sum1 = originalArray
   .reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
 
 console.log(sum1);
+
+// split() and join() Method--
+const data = 'new york;10.99;2000';
+
+const transformedData = data.split(';'); // split() method
+transformedData[1] = +transformedData[1]; // Converting to Number
+transformedData[2] = +transformedData[2]; // Converting to Number
+
+console.log(transformedData);
+
+const nameFragements = ['Max', 'Schwarz'];
+const name = nameFragements.join(' '); // join() method
+console.log(name);
