@@ -195,6 +195,27 @@ transformedData[2] = +transformedData[2]; // Converting to Number
 
 console.log(transformedData);
 
-const nameFragements = ['Max', 'Schwarz'];
-const name = nameFragements.join(' '); // join() method
+const nameFragments = ['Max', 'Schwarz'];
+const name = nameFragments.join(' '); // join() method
 console.log(name);
+
+// Spread Operator (...) Method--
+const copiedNameFragments = [...nameFragments];
+nameFragments.push('Mr');
+console.log(nameFragments, copiedNameFragments);
+
+console.log(Math.min(...prices)); // Stand-Alone Values from Araays
+
+const persons = [
+  { name: 'Max', age: 30 },
+  { name: 'Manuel', age: 31 },
+];
+const copiedPersons = persons.map((person) => ({
+  name: person.name,
+  age: person.age,
+}));
+
+persons.push({ name: 'Anna', age: 29 });
+persons[0].age = 31;
+
+console.log(persons, copiedPersons);
